@@ -70,15 +70,14 @@ def main() -> NoReturn:
                 combined_texts = extract_text_from_pdf(pdf_file)
                 chunks = split_text_to_chunks(combined_texts, chunk_size=1000, chunk_overlap=100)
 
-                # Create a vectorstore from texts using Chroma
-                db = Chroma.from_texts(
-                        chunks,
-                        OpenAIEmbeddings(openai_api_key=openai_api_key)
-                    )
-
-                add_vertical_space(2)
-
                 try:
+                    # Create a vectorstore from texts using Chroma
+                    db = Chroma.from_texts(
+                            chunks,
+                            OpenAIEmbeddings(openai_api_key=openai_api_key)
+                        )
+
+                    add_vertical_space(2)
                     response = get_response(db, query, openai_api_key)
                 except openai.error.AuthenticationError:
                     st.info('Incorrect API key provided', icon="⚠️")
