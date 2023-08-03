@@ -28,7 +28,7 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 custom_footer = """
-            <div style = "position: fixed;bottom: 20px;width: 100%; float:center;">
+            <div style = "position: fixed;bottom: 20px;width: 100%;">
                 Made with ❤️ by <a href="https://www.linkedin.com/in/tamunopriye-dagogo-george-191175167/">Tamunopriye</a>
             </div>
             """
