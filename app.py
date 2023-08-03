@@ -11,7 +11,7 @@ from utils import extract_text_from_pdf, split_text_to_chunks
 
 st.set_page_config(page_title='Ask the Doc App')
 st.title('📚💡Ask the Doc App')
-st.header("Langchain PDF Parser for Question Answering")
+st.header("PDF Parser for Question Answering")
 
 st.markdown('''
     #### Getting STARTED
