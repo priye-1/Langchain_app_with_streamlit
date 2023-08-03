@@ -1,3 +1,4 @@
+import sys
 import openai
 import streamlit as st
 from typing import NoReturn
@@ -7,6 +8,8 @@ from langchain.llms import OpenAI
 from langchain.chains import RetrievalQA
 from streamlit_extras.add_vertical_space import add_vertical_space
 from utils import extract_text_from_pdf, split_text_to_chunks
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 st.set_page_config(page_title='Ask the Doc App')
