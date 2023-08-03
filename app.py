@@ -20,6 +20,21 @@ st.markdown('''
 ''')
 
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+custom_footer = """
+            <div style = "position: fixed;bottom: 20px;width: 100%; float:center;">
+                Made with ❤️ by <a href="https://www.linkedin.com/in/tamunopriye-dagogo-george-191175167/">Tamunopriye</a>
+            </div>
+            """
+st.write(custom_footer, unsafe_allow_html=True)
+
+
 def get_response(db:object, query:str, openai_api_key:str) -> str:
     """Function to # Create QA chain and get response from OPENAI llm
 
